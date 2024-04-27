@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines each item (amenity) found in the appartment
+This module defines each item (amenity) found in the apartment
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
@@ -8,7 +8,7 @@ from sqlalchemy.orm import relationship
 
 class Amenity(Base):
     """
-    The table for each amenity which the appartment has
+    The table for each amenity which the apartment has
     """
 
     __tablename__ = 'amenities'
@@ -17,6 +17,6 @@ class Amenity(Base):
     name = Column(String(50))
     description = Column(String(256))
     number = Column(Integer)
-    appartment_id = Column(Integer, ForeignKey('appartments.id'))
+    apartment_id = Column(Integer, ForeignKey('apartments.id'))
 
-    appartment = relationship("Appartment", back_populates="amenities")
+    apartment = relationship("Apartment", back_populates="amenities")

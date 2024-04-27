@@ -16,10 +16,10 @@ class Booking(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('users.id'))
-    appartment_id = Column(Integer, ForeignKey('appartments.id'))
+    apartment_id = Column(Integer, ForeignKey('apartments.id'))
     start_date = Column(Date)
     end_date = Column(Date)
     status = Column(String(10))
 
     user = relationship("User", back_populates="bookings")
-    appartment = relationship("Appartment", back_populates="bookings")
+    apartment = relationship("Apartment", back_populates="bookings")
