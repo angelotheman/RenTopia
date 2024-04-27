@@ -12,4 +12,8 @@ class User(Base):
     """
     __tablename__ = 'users'
 
-    id = Column(String)
+    id = Column(Integer, index=True, primary_key=True)
+    firstname = Column(String(50), index=True)
+    lastname = Column(String(50), index=True)
+    email = Column(String(128), index=True)
+    phone_number = Column(String(10), index=True)
