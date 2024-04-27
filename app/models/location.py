@@ -2,7 +2,7 @@
 """
 Module to define the location of appartments
 """
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Float
 from models import Base
 
 
@@ -15,5 +15,5 @@ class Location(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(64))
-    latitude = Column(String(50))
-    longitude = Column(String(50))
+    latitude = Column(Float)
+    longitude = Column(Float)
