@@ -4,7 +4,6 @@ This is the entry point of the entire application
 """
 from fastapi import FastAPI
 from routers import user, apartment, booking, review
-from config import Config
 from database import engine
 from models import Base
 
