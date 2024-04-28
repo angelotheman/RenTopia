@@ -5,7 +5,7 @@ This is the entry point of the entire application
 from fastapi import FastAPI
 from routers import user, apartment, booking, review
 from database import engine
-from models import Base
+from models.base import Base
 
 
 app = FastAPI()
