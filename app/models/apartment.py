@@ -5,6 +5,7 @@ Module for the various apartments in the project
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from models.base_model import Base, Basemodel
+from data_base.storage import Storage
 
 class Apartment(Base, Basemodel):
     """
@@ -20,18 +21,18 @@ class Apartment(Base, Basemodel):
     price = Column(Float)
     status = Column(String(50))
     location_id = Column(Integer, ForeignKey('locations.id'))
+    image_path = Column(String)
 
 
     location = relationship("Location", back_populates="apartments")
+    def __init__(self, *vars):
+        '''Initializes the class'''
+        super().__init__(*vars)
 
-    def get(self, id):
-        '''Get apartment using id'''
-
-
-    def delete(self, id):
-        '''Delete an apartment using specified id'''
-    
-    def all(self):
-        '''Returns all apartments'''
-    
+    def new(self):
+        """Creates a new instance of the apartment model"""
+        apt = Storage.new(Apartment)
+        if apt is not None:
+            Storage.save()
+        return apt
         
