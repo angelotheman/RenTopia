@@ -2,12 +2,11 @@
 """
 Module for the various apartments in the project
 """
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from models import Base
+from models.base_model import Base, Basemodel
 
-
-class Apartment(Base):
+class Apartment(Base, Basemodel):
     """
     This class defines the appartment table based on various apartments
     in the project
@@ -24,3 +23,15 @@ class Apartment(Base):
 
 
     location = relationship("Location", back_populates="apartments")
+
+    def get(self, id):
+        '''Get apartment using id'''
+
+
+    def delete(self, id):
+        '''Delete an apartment using specified id'''
+    
+    def all(self):
+        '''Returns all apartments'''
+    
+        
