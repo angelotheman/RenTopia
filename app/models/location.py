@@ -13,6 +13,6 @@ class Location(Base):
     __tablename__ = 'locations'
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(64))
+    name = Column(String(64), nullable=False)
     latitude = Column(Float)
     longitude = Column(Float)
