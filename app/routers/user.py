@@ -7,6 +7,27 @@ from fastapi import APIRouter
 
 router = APIRouter(prefix="/users")
 
-@router.get("/")
-async def home_page():
-    return {"message": "FastAPI is up and running"}
+# User registration
+@router.post("/register")
+async def register_user():
+    """
+    Registers a new user
+    """
+    pass
+
+
+# User login
+@router.post("/login")
+async def login_user():
+    """
+    Logs in a user
+    """
+    pass
+
+# Retrieve user profile
+@router.get("/profile")
+async def get_user_profile():
+    """
+    Retrieves the user profile
+    """
+    pass
