@@ -3,7 +3,7 @@
 User module for the user table
 """
 from sqlalchemy import Column, Integer, String
-from models.base import Base
+from models.base_model import Base
 
 
 class User(Base):
