@@ -4,7 +4,7 @@ Booking module for the program
 """
 from sqlalchemy import Column, Integer, ForeignKey, Date
 from sqlalchemy.orm import relationship
-from models import Base
+from models.base import Base
 
 
 class Booking(Base):

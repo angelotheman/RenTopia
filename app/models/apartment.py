@@ -4,7 +4,7 @@ Module for the various apartments in the project
 """
 from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import relationship
-from models import Base
+from models.base import Base
 
 
 class Apartment(Base):

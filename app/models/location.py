@@ -3,7 +3,7 @@
 Module to define the location of apartments
 """
 from sqlalchemy import Column, Integer, String, Float
-from models import Base
+from models.base import Base
 
 
 class Location(Base):

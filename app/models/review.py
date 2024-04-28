@@ -4,7 +4,7 @@ Module for the Review section
 """
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-from models import Base
+from models.base import Base
 
 
 class Review(Base):
