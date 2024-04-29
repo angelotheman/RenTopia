@@ -6,7 +6,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from models.base_model import Base
 
-
 class Amenity(Base):
     """
     The table for each amenity which the apartment has
