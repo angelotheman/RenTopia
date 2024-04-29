@@ -2,12 +2,12 @@
 """
 Module for the various apartments in the project
 """
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from models import Base
+from models.base_model import Base, Basemodel
+from data_base.storage import Storage
 
-
-class Apartment(Base):
+class Apartment(Base, Basemodel):
     """
     This class defines the appartment table based on various apartments
     in the project
@@ -21,6 +21,18 @@ class Apartment(Base):
     price = Column(Float)
     status = Column(String(50))
     location_id = Column(Integer, ForeignKey('locations.id'))
+    image_path = Column(String)
 
 
     location = relationship("Location", back_populates="apartments")
+    def __init__(self, *vars):
+        '''Initializes the class'''
+        super().__init__(*vars)
+
+    def new(self):
+        """Creates a new instance of the apartment model"""
+        apt = Storage.new(Apartment)
+        if apt is not None:
+            Storage.save()
+        return apt
+        

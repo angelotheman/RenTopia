@@ -4,7 +4,7 @@ This module defines each item (amenity) found in the apartment
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-
+from models.base_model import Base
 
 class Amenity(Base):
     """
