@@ -2,7 +2,7 @@
 """
 Module for the various apartments in the project
 """
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from models.base_model import Base
 
