@@ -17,8 +17,8 @@ class User(Base, Basemodel):
     id = Column(Integer, index=True, primary_key=True)
     firstname = Column(String(50), index=True, nullable=False)
     lastname = Column(String(50), index=True, nullable=False)
-    email = Column(String(128), index=True, nullable=False)
-    phone_number = Column(String(10), index=True)
+    email = Column(String(128), index=True)
+    phone_number = Column(String(10), index=True, nullable=False)
     password = Column(String, nullable=False)
 
     def __init__(self, *var, **vars):

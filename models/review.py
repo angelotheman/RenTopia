@@ -23,3 +23,7 @@ class Review(Base):
 
     user = relationship("User", back_populates="reviews")
     apartment = relationship("Apartment", back_populates="reviews")
+
+    def __init__(self, *var, **vars):
+        '''Initializes the class'''
+        super.__init__(*var, **vars)
