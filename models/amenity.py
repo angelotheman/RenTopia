@@ -20,3 +20,6 @@ class Amenity(Base):
     apartment_id = Column(Integer, ForeignKey('apartments.id'))
 
     apartment = relationship("Apartment", back_populates="amenities")
+
+    def __init__(self, *var, **vars):
+        super.__init__(*var, **vars)

@@ -9,7 +9,7 @@ Base = declarative_base()
 
 class Basemodel:
     """The Basemodel for all other classes"""
-    def __init__(self, *var):
+    def __init__(self, *var, **vars):
         '''Initialize Base class'''
         self.idd = str(uuid.uuid4())
 
