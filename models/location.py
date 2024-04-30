@@ -17,3 +17,5 @@ class Location(Base):
     name = Column(String(64), nullable=False)
     latitude = Column(Float)
     longitude = Column(Float)
+    def __init__(*var, **vars):
+        super.__init__(*var, **vars)

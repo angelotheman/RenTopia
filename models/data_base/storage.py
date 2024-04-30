@@ -2,17 +2,16 @@
 """Contains the DataBase storage"""
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 import sqlalchemy
-from app.models.amenity import Amenity
-from app.models.apartment import Apartment
-from app.models.base_model import Basemodel
-from app.models.booking import Booking
-from app.models.location import Location
-from app.models.review import Review
-from app.models.user import User
-from app.models.base_model import Base
-import os
+from models.amenity import Amenity
+from models.apartment import Apartment
+from models.base_model import Basemodel
+from models.booking import Booking
+from models.location import Location
+from models.review import Review
+from models.user import User
+from models.base_model import Base
 
 classes = {
     'amenity': Amenity,
@@ -36,14 +35,13 @@ class Storage:
         host = 'HOST'
         passwd = 'PASSWORD'
 
-        self.__engine = create_engine('mysql+mysqldb//{}:{}@{}/{}'.
-                                      format(os.getenv(username),
-                                             os.getenv(passwd),
-                                             os.getenv(host),
-                                             os.getenv(database)))
+        self.__engine = create_engine(f"mysql+mysqldb://{username}:{passwd}@{host}/{database}")
 
-        Base.metadata.create_all(self.__engine)
-        Session =  sessionmaker(bind=self.__engine, expire_on_commit=False)
+    def start(self):
+        """Create database tables and start a sessoin"""
+        Base.metadata.create_all(bind=self.__engine)
+        session_factory = sessionmaker(bind=self.__engine)
+        Session = scoped_session(session_factory)
         self.__session = Session
 
     def all(self, cls=None):
@@ -56,7 +54,7 @@ class Storage:
         result = {}
         if cls is not None:
             for item in classes.values():
-                if item is classes[cls] or item is cls:
+                if item is classes[cls] or item.__name__ is cls.__name__:
                     ob = self.__session.query(item).all()
                     for obj in ob:
                         key = obj.__class__.__name__ + '_' + obj.id
@@ -65,7 +63,7 @@ class Storage:
             ob = self.__session.query().all()
             for obj in ob:
                 key = obj.__class__.__name__ + '_' + obj.id
-                result[key] == obj
+                result[key] = obj
 
         return result
 
