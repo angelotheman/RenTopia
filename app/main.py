@@ -4,9 +4,8 @@ This is the entry point of the entire application
 """
 from fastapi import FastAPI
 from routers import user, apartment, booking, review
-from config import Config
-from database import engine
-from models import Base
+#from database import engine
+#from models.base_model import Base
 
 
 app = FastAPI()
@@ -14,10 +13,10 @@ app = FastAPI()
 
 # Include routers
 app.include_router(user.router)
-app.include_router(apartment.router)
-app.include_router(booking.router)
-app.include_router(review.router)
+#app.include_router(apartment.router)
+#app.include_router(booking.router)
+#app.include_router(review.router)
 
 
 # Create tables
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)

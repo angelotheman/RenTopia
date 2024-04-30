@@ -3,8 +3,10 @@
 User module for the user table
 """
 from sqlalchemy import Column, Integer, String
+
 from models.base_model import Base, Basemodel
 import scrypt
+
 
 class User(Base, Basemodel):
     """
