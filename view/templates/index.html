@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') }}">    
+    <title>Rentopia</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static', filename='images/Rentopia.png')}}" alt="">
+        </div>
+        <nav>
+            <div class="upper-nav">
+                <a href="{{ url_for('views.login') }}"><button class="login">Login</button></a>
+                <a href="{{ url_for('views.signup') }}">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <div class="page">
+        <h1>RenTopia... Rent made easy</h1>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut fuga velit voluptas dignissimos corporis amet mollitia reprehenderit nobis a molestiae commodi accusamus, autem voluptates incidunt nostrum, minus id, est hic.</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa nesciunt nostrum repellendus, quas provident ad numquam unde et quisquam obcaecati voluptas inventore minus consequuntur distinctio suscipit soluta aut necessitatibus assumenda?</p>
+    </div>
+    <footer>
+        <section id="bottom-nav">
+            <ul>
+                <li id="about">About Us</li>
+                <p>RenTopia is a User friendly website that aids people to find homes around them.</p>
+                <li id="contact">Give us a call on +233 24 5555555</li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>
