@@ -7,6 +7,7 @@ from sqlalchemy.orm import relationship
 from models.base_model import Base, Basemodel
 from data_base import data_storage
 
+
 class Apartment(Base, Basemodel):
     """
     This class defines the appartment table based on various apartments
