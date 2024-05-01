@@ -38,9 +38,4 @@ SQLAlchemy==2.0.29
 typing_extensions==4.11.0
 Werkzeug==3.0.2
 wrapt==1.16.0
-<<<<<<< HEAD
-Python==3.8.10
 zipp==3.18.1
-=======
-zipp==3.18.1
->>>>>>> db0552c5c18b789daa8ce2954e00680769f34841
