@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 from flask import Flask
 from flask_cors import CORS
-#from view import views
 from view.routes import views
 import os
 
