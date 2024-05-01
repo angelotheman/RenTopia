@@ -25,3 +25,6 @@ starlette==0.37.2
 typing_extensions==4.11.0
 uvicorn==0.29.0
 wrapt==1.16.0
+Python 3.8.10
+Flask 2.1.0
+Werkzeug 2.2.0
