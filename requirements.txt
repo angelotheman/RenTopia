@@ -12,6 +12,7 @@ Deprecated==1.2.14
 exceptiongroup==1.2.1
 fabric==3.2.2
 Flask==3.0.3
+Flask-Cors==4.0.0
 Flask-Migrate==4.0.7
 Flask-RESTful==0.3.10
 Flask-SQLAlchemy==3.1.1
@@ -35,10 +36,6 @@ six==1.16.0
 sniffio==1.3.1
 SQLAlchemy==2.0.29
 typing_extensions==4.11.0
-uvicorn==0.29.0
 Werkzeug==3.0.2
 wrapt==1.16.0
-Python 3.8.10
-Flask 2.1.0
-Werkzeug 2.2.0
 zipp==3.18.1
