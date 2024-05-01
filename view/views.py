@@ -3,6 +3,7 @@
 from view import views
 from flask import render_template
 
+
 @views.route('/', strict_slashes=False, methods=['GET'])
 def home_page():
     """Landing page"""
