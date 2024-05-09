@@ -20,3 +20,9 @@ def login():
 def signup():
     """Signup page"""
     return render_template('signup.html')
+
+
+@views.route('/home', strict_slashes=False, methods=['GET'])
+def main():
+    """home page of project"""
+    return render_template('main.html')
