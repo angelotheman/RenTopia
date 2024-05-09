@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This is the views or routes for the website"""
+
 from flask import Blueprint, render_template
 
 views = Blueprint('views', __name__)
@@ -19,3 +20,9 @@ def login():
 def signup():
     """Signup page"""
     return render_template('signup.html')
+
+
+@views.route('/home', strict_slashes=False, methods=['GET'])
+def main():
+    """home page of project"""
+    return render_template('main.html')

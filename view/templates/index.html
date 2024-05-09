@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') }}">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing-page.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        .landing-page {
+            background-image: url("{{ url_for('static', filename='images/screen.jpg') }}");
+        }
+    </style>
     <title>Rentopia</title>
 </head>
 <body>
@@ -15,24 +23,57 @@
         </div>
         <nav>
             <div class="upper-nav">
-                <a href="{{ url_for('views.login') }}"><button class="login">Login</button></a>
-                <a href="{{ url_for('views.signup') }}">Sign Up</a>
+                <a href="{{ url_for('views.main') }}">VIEW HOMES</a>
+                <a href="{{ url_for('views.signup') }}"><button class="signup">GET STARTED</button></a>
+                <a href="{{ url_for('views.login') }}">LOGIN</a>
             </div>
         </nav>
     </header>
-    <div class="page">
+    <div class="landing-page">
         <h1>RenTopia... Rent made easy</h1>
-    </div>
-    <div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut fuga velit voluptas dignissimos corporis amet mollitia reprehenderit nobis a molestiae commodi accusamus, autem voluptates incidunt nostrum, minus id, est hic.</p>
-    </div>
-    <div>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa nesciunt nostrum repellendus, quas provident ad numquam unde et quisquam obcaecati voluptas inventore minus consequuntur distinctio suscipit soluta aut necessitatibus assumenda?</p>
+        <div class="msg">
+            <p>RENTOPIA allows you to easily locate houses available for rent. Save yourself from the hustle and scams! Find your new home from your old home.</p>
+        <div class="reach">
+            <p>Want to post your apartment available for rent?</p>
+            <form action="view/routes.py" method="post">
+                <input type="text" name="firstname" id="fname" placeholder="First Name" required>
+                <input type="text" name="lastname" id="lname" placeholder="Last Name" required>
+                <input type="email" name="email" id="username" placeholder="Email">
+                <input type="tel" name="phone" id="telephone" placeholder="Telephone Number" required>
+                <fieldset>
+                    <legend>Apartment Information</legend>
+                    <label for="Location">Where is your Apartment located?</label>
+                    <select name="location" id="location" required>
+                        <option value="Ashanti">Ashanti</option>
+                        <option value="Bono">Bono</option>
+                        <option value="Bono East">Bono East</option>
+                        <option value="Ahafo">Ahafo</option>
+                        <option value="Central">Central</option>
+                        <option value="Eastern">Eastern</option>
+                        <option value="Greater Accra">Greater Accra</option>
+                        <option value="Nothern">Northen</option>
+                        <option value="Savannah">Savannah</option>
+                        <option value="North East">North East</option>
+                        <option value="Upper East">Upper East</option>
+                        <option value="Upper West">Upper West</option>
+                        <option value="Oti">Oti</option>
+                        <option value="Volta">Volta</option>
+                        <option value="Western">Western</option>
+                        <option value="Western North">Western North</option>
+                    </select>
+                    <label for="rooms">How many rooms are in your apartment?</label>
+                    <input type="number" name="number" id="number" required>
+                    <label for="message">Any other information you would like to let us know?</label>
+                    <input type="text" name="extra" id="extra" placeholder="Tell us more...">
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
     <footer>
         <section id="bottom-nav">
             <ul>
-                <li id="about">About Us</li>
+                <li id="about">ABOUT US</li>
                 <p>RenTopia is a User friendly website that aids people to find homes around them.</p>
                 <li id="contact">Give us a call on +233 24 5555555</li>
             </ul>
