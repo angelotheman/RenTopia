@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: white;
 }
 
 header {
@@ -33,11 +34,11 @@ img {
     align-items: center;
 }
 
-button.login {
+button.signup {
     border: 1px groove #5e4e3a;
-    width: 5rem;
-    height: 2.7rem;
-    border-radius: 7px;
+    width: 9rem;
+    height: 2.0rem;
+    border-radius: 10px;
     padding: 5px 15px;
     background-color: #D2B48C;
     font-family: 'Courier New', Courier, monospace;
@@ -54,7 +55,7 @@ button.login {
     margin-right: 10px;
 }
 
-.upper-nav button.login:hover {
+.upper-nav button.signup:hover {
     background-color: #e6e3df;
 }
 
@@ -62,6 +63,6 @@ button.login {
     color: #e6e3df;
 }
 
-.upper-nav button.login:active {
+.upper-nav button.signup:active {
     color: #e6e3df;
 }
