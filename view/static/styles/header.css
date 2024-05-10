@@ -66,3 +66,19 @@ button.signup {
 .upper-nav button.signup:active {
     color: #e6e3df;
 }
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+}
+
+#bottom-nav p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
