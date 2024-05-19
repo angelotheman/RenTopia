@@ -4,10 +4,10 @@ Booking module for the program
 """
 from sqlalchemy import Column, Integer, ForeignKey, Date, String
 from sqlalchemy.orm import relationship
-from models.base_model import Base
+from models.base_model import Base, Basemodel
 
 
-class Booking(Base):
+class Booking(Base, Basemodel):
     """
     Table for all bookings made by the user
     """

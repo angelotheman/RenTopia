@@ -4,10 +4,10 @@ Module for the Review section
 """
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-from models.base_model import Base
+from models.base_model import Base, Basemodel
 
 
-class Review(Base):
+class Review(Base, Basemodel):
     """
     This is the table for the review section
     """

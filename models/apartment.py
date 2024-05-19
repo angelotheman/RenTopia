@@ -5,7 +5,6 @@ Module for the various apartments in the project
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from models.base_model import Base, Basemodel
-from data_base import data_storage
 
 
 class Apartment(Base, Basemodel):

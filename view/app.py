@@ -18,4 +18,4 @@ if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     host = os.getenv('HOST', '0.0.0.0')
     myapp = create_myapp()
-    myapp.run(debug=True, port=port, host=host)
+    myapp.run(port=port, host=host)
